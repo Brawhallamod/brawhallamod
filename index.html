@@ -3,42 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Landing Page</title>
+  <title>Brawlhalla Mod</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
+
     h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       color: #00bcd4;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2em;
+
+    p.tagline {
       color: #ccc;
+      font-size: 1.2em;
+      margin-bottom: 40px;
     }
-    a.button {
+
+    .game-image img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .game-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .download {
+      margin-top: 30px;
+    }
+
+    .download-button {
       display: inline-block;
-      margin-top: 20px;
-      background: #00bcd4;
+      background-color: #00bcd4;
       color: white;
-      padding: 15px 30px;
+      padding: 15px 35px;
+      font-size: 1.2em;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 1.2em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    a.button:hover {
-      background: #0097a7;
+
+    .download-button:hover {
+      background-color: #0097a7;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      .download-button {
+        font-size: 1em;
+        padding: 12px 25px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Landing Page</h1>
-  <p>This is a simple page hosted with GitHub Pages.</p>
-  <a href="#" class="button">Get Started</a>
+
+  <h1>Brawlhalla Mod</h1>
+  <p class="tagline">Play with enhanced features in this modified version of Brawlhalla!</p>
+
+  <div class="game-image">
+    <img src="https://i.postimg.cc/fW53YQYF/brawhalla2.jpg" alt="Brawlhalla Mod Game Screenshot">
+  </div>
+
+  <div class="download">
+    <a href="#" class="download-button">📥 Download Now</a>
+  </div>
+
 </body>
 </html>
