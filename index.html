@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brawlhalla Mod</title>
+
+  <!-- Main Styles -->
   <style>
     body {
       margin: 0;
@@ -12,7 +14,6 @@
       color: #fff;
       text-align: center;
       padding: 40px 20px;
-      position: relative;
     }
 
     h1 {
@@ -53,8 +54,6 @@
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
       cursor: pointer;
-      z-index: 2;
-      position: relative;
     }
 
     .download-button:hover {
@@ -62,16 +61,51 @@
       transform: scale(1.05);
     }
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 1;
+    /* Modal Locker Styles */
+    .locker-modal {
       display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(3px);
+    }
+
+    .locker-content {
+      background-color: #1f1f1f;
+      color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin: 10% auto;
+      box-shadow: 0 0 20px #00bcd4;
+    }
+
+    .verify-button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1.1em;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .verify-button:hover {
+      background-color: #0097a7;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 1.2em;
+      margin-top: 10px;
+      cursor: pointer;
     }
 
     @media (max-width: 600px) {
@@ -85,16 +119,14 @@
     }
   </style>
 
-  <!-- AdBlueMedia Content Locker Script -->
+  <!-- AdBlueMedia Locker Script -->
   <script type="text/javascript">
-    var XvrPH_tyj_YJfeMc = {"it": 4482674, "key": "ce50f"};
+    var XvrPH_tyj_YJfeMc = {"it":4482674,"key":"ce50f"};
   </script>
   <script src="https://d2yc6hxtq0phup.cloudfront.net/0f7d525.js"></script>
 </head>
-<body>
 
-  <!-- Overlay for background effect -->
-  <div class="overlay" id="lockerOverlay"></div>
+<body>
 
   <h1>Brawlhalla Mod</h1>
   <p class="tagline">Play with enhanced features in this modified version of Brawlhalla!</p>
@@ -103,15 +135,35 @@
     <img src="https://i.postimg.cc/fW53YQYF/brawhalla2.jpg" alt="Brawlhalla Mod Game Screenshot">
   </div>
 
+  <!-- Download Button (Triggers Modal) -->
   <div class="download">
-    <!-- Trigger the content locker -->
-    <button onclick="showLocker()" class="download-button">📥 Download Now</button>
+    <button class="download-button" onclick="showStyledLocker()">📥 Download Now</button>
   </div>
 
+  <!-- Locker Modal -->
+  <div id="lockerModal" class="locker-modal">
+    <div class="locker-content">
+      <h2>🔓 Unlock the Download</h2>
+      <p>Complete a quick offer to access the download.</p>
+      <button onclick="launchLocker()" class="verify-button">Start Verification</button>
+      <br />
+      <button onclick="closeModal()" class="close-button">✖ Cancel</button>
+    </div>
+  </div>
+
+  <!-- Script to control modal behavior -->
   <script>
-    function showLocker() {
-      document.getElementById('lockerOverlay').style.display = 'block';
-      _HW(); // Trigger the AdBlueMedia locker
+    function showStyledLocker() {
+      document.getElementById('lockerModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('lockerModal').style.display = 'none';
+    }
+
+    function launchLocker() {
+      closeModal();  // Hide modal
+      _HW();         // Call the content locker
     }
   </script>
 
