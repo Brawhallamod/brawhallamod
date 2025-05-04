@@ -61,6 +61,11 @@
       transform: scale(1.05);
     }
 
+    .download-button:disabled {
+      background-color: #666;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2em;
@@ -71,12 +76,6 @@
       }
     }
   </style>
-
-  <!-- New Content Locker Script -->
-  <script type="text/javascript">
-    var CGIqB_VpW_ONnOFc = {"it":4478708,"key":"d18ec"};
-  </script>
-  <script src="https://d2v7l2267atlz5.cloudfront.net/d420520.js"></script>
 </head>
 
 <body>
@@ -88,11 +87,40 @@
     <img src="https://i.postimg.cc/fW53YQYF/brawhalla2.jpg" alt="Brawlhalla Mod Game Screenshot">
   </div>
 
-  <!-- Download Button (Triggers New Locker) -->
+  <!-- Download Button (Initially Disabled) -->
   <div class="download">
-    <button class="download-button" onclick="_EQ()">📥 Download Now</button>
+    <button id="dl-btn" class="download-button" disabled>📥 Loading...</button>
   </div>
+
+  <!-- Locker Config -->
+  <script type="text/javascript">
+    var CGIqB_VpW_ONnOFc = {"it":4478708,"key":"d18ec"};
+  </script>
+
+  <!-- Locker Script -->
+  <script>
+    const downloadBtn = document.getElementById('dl-btn');
+
+    function activateLocker() {
+      if (typeof _EQ === 'function') {
+        downloadBtn.disabled = false;
+        downloadBtn.textContent = '📥 Download Now';
+        downloadBtn.onclick = () => _EQ();
+      } else {
+        downloadBtn.disabled = true;
+        downloadBtn.textContent = '⚠️ Locker failed. Try disabling adblock.';
+      }
+    }
+
+    const lockerScript = document.createElement('script');
+    lockerScript.src = "https://d2v7l2267atlz5.cloudfront.net/d420520.js";
+    lockerScript.onload = activateLocker;
+    lockerScript.onerror = () => {
+      downloadBtn.textContent = '⚠️ Failed to load locker.';
+      downloadBtn.disabled = true;
+    };
+    document.head.appendChild(lockerScript);
+  </script>
 
 </body>
 </html>
-
