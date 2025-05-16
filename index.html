@@ -2,125 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brawlhalla Mod</title>
-
-  <!-- Main Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Downloads</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 2.8em;
-      color: #00bcd4;
-      margin-bottom: 10px;
-    }
-
-    p.tagline {
-      color: #ccc;
-      font-size: 1.2em;
-      margin-bottom: 40px;
-    }
-
-    .game-image img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .game-image img:hover {
-      transform: scale(1.03);
-    }
-
-    .download {
-      margin-top: 30px;
-    }
-
-    .download-button {
-      display: inline-block;
-      background-color: #00bcd4;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e1e;
       color: white;
-      padding: 15px 35px;
-      font-size: 1.2em;
+      margin: 0;
+      padding: 20px 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .game {
+      background: #2c2c2c;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .download-btn {
+      display: inline-block;
+      background-color: #00ffc8;
+      color: #000;
+      padding: 14px 28px;
+      font-size: 18px;
       border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
       cursor: pointer;
+      transition: background 0.3s ease;
+      user-select: none;
+      text-decoration: none;
     }
-
-    .download-button:hover {
-      background-color: #0097a7;
-      transform: scale(1.05);
+    .download-btn:hover {
+      background-color: #00cfa4;
     }
-
-    .download-button:disabled {
-      background-color: #666;
-      cursor: not-allowed;
-    }
-
     @media (max-width: 600px) {
       h1 {
-        font-size: 2em;
+        font-size: 28px;
       }
-      .download-button {
-        font-size: 1em;
-        padding: 12px 25px;
+      .download-btn {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+      img {
+        max-width: 100%;
       }
     }
   </style>
-</head>
 
-<body>
-
-  <h1>Brawlhalla Mod</h1>
-  <p class="tagline">Play with enhanced features in this modified version of Brawlhalla!</p>
-
-  <div class="game-image">
-    <img src="https://i.postimg.cc/fW53YQYF/brawhalla2.jpg" alt="Brawlhalla Mod Game Screenshot">
-  </div>
-
-  <!-- Download Button (Initially Disabled) -->
-  <div class="download">
-    <button id="dl-btn" class="download-button" disabled>📥 Loading...</button>
-  </div>
-
-  <!-- Locker Config -->
+  <!-- Among Us Locker Script -->
   <script type="text/javascript">
-    var CGIqB_VpW_ONnOFc = {"it":4478708,"key":"d18ec"};
+    var diAHJ_yGd_djHlfc = {"it":4478708,"key":"d18ec"};
   </script>
+  <script src="https://d2v7l2267atlz5.cloudfront.net/6237cc2.js"></script>
 
-  <!-- Locker Script -->
-  <script>
-    const downloadBtn = document.getElementById('dl-btn');
-
-    function activateLocker() {
-      if (typeof _EQ === 'function') {
-        downloadBtn.disabled = false;
-        downloadBtn.textContent = '📥 Download Now';
-        downloadBtn.onclick = () => _EQ();
-      } else {
-        downloadBtn.disabled = true;
-        downloadBtn.textContent = '⚠️ Locker failed. Try disabling adblock.';
-      }
-    }
-
-    const lockerScript = document.createElement('script');
-    lockerScript.src = "https://d2v7l2267atlz5.cloudfront.net/d420520.js";
-    lockerScript.onload = activateLocker;
-    lockerScript.onerror = () => {
-      downloadBtn.textContent = '⚠️ Failed to load locker.';
-      downloadBtn.disabled = true;
-    };
-    document.head.appendChild(lockerScript);
+  <!-- Hoop Land Locker Script -->
+  <script type="text/javascript">
+    var POWsJ_Ayd_Dtywwc = {"it":4482674,"key":"ce50f"};
   </script>
+  <script src="https://d2v7l2267atlz5.cloudfront.net/cad1ad6.js"></script>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Among Us Section -->
+    <section class="game">
+      <h1>Among Us</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Among_Us_cover_art.jpg" alt="Among Us Game Cover" />
+      <div 
+        class="download-btn" 
+        onclick="_qW();" 
+        role="button" tabindex="0" 
+        onkeypress="if(event.key==='Enter' || event.key===' ') _qW();"
+      >
+        Download Now
+      </div>
+    </section>
 
+    <!-- Hoop Land Section -->
+    <section class="game">
+      <h1>Hoop Land</h1>
+      <img src="https://cdn1.epicgames.com/offer/69ac1409b6ff4cc5a0d37b5bb6c4fce6/EGS_HoopLand_SyboGames_S2_2560x1440-13ec2e03d1232d7bb3f6a7a7b0e303f9" alt="Hoop Land Game Cover" />
+      <div 
+        class="download-btn" 
+        onclick="_Hn();" 
+        role="button" tabindex="0" 
+        onkeypress="if(event.key==='Enter' || event.key===' ') _Hn();"
+      >
+        Download Now
+      </div>
+    </section>
+  </div>
 </body>
 </html>
